@@ -8,7 +8,7 @@ with open(file_name, newline = '') as csvfile:
     profit_loss = [int(item) for item in [row[1] for row in bankreader][1:]]
 
 # Calculate changes by taking the profits and losses and subtracting the previous month
-changes = [j-i for i, j in zip(profit_loss[:-1],profit_loss[1:])]
+changes = [month2-month1 for month1, month2 in zip(profit_loss[:-1],profit_loss[1:])]
 
 max_increase = max(changes)
 max_decrease = min(changes)
